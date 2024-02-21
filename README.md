@@ -16,7 +16,7 @@
 
 ### Commands
 
->--------------------------------------------------------------------
-> php artisan weather:open-weather-map Tashkent mail: {mail}
 >------------------------------------------------------------------
-> php artisan weather:accu-weather Tashkent telegram: {chat_id}
+>php artisan weather:open-weather-map Tashkent mail: {mail}
+>------------------------------------------------------------------
+>php artisan weather:accu-weather Tashkent telegram: {chat_id}
