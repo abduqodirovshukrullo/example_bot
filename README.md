@@ -10,7 +10,8 @@
 
 ### Intro
 > Weather api. Using AccuWeather and OpenWeatherMap
-> Available cities: [Tashkent London Moscow	Astana]
+Available cities: 
+> [Tashkent London Moscow	Astana]
 
 ### Commands
 
