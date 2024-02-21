@@ -1,35 +1,18 @@
-# vue
+# Table of Contents
+- [Table of Contents](#table-of-contents)
+    - [References](#references)
+    - [Intro](#intro)
+    - [Commands](#commands)
+   
 
-This template should help get you started developing with Vue 3 in Vite.
+### References
+>[Telegraph](https://defstudio.github.io/telegraph/)
 
-## Recommended IDE Setup
+### Intro
+> Weather api. Using AccuWeather and OpenWeatherMap
+> Available cities: [Tashkent London Moscow	Astana]
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volar) (and disable Vetur).
+### Commands
 
-## Type Support for `.vue` Imports in TS
-
-Since TypeScript cannot handle type information for `.vue` imports, they are shimmed to be a generic Vue component type by default. In most cases this is fine if you don't really care about component prop types outside of templates.
-
-However, if you wish to get actual prop types in `.vue` imports (for example to get props validation when using manual `h(...)` calls), you can run `Volar: Switch TS Plugin on/off` from VSCode command palette.
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
-
-## Project Setup
-
-```sh
-npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Type-Check, Compile and Minify for Production
-
-```sh
-npm run build
-```
+> php artisan weather:open-weather-map Tashkent mail: {mail}
+> php artisan weather:accu-weather Tashkent telegram: {chat_id}
