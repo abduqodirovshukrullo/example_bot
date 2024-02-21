@@ -10,10 +10,13 @@
 
 ### Intro
 > Weather api. Using AccuWeather and OpenWeatherMap
-Available cities: 
+
+####Available cities: 
 > [Tashkent London Moscow	Astana]
 
 ### Commands
 
+>--------------------------------------------------------------------
 > php artisan weather:open-weather-map Tashkent mail: {mail}
+>------------------------------------------------------------------
 > php artisan weather:accu-weather Tashkent telegram: {chat_id}
