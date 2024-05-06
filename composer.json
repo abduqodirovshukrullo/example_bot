@@ -12,6 +12,7 @@
         "laravel/passport": "^11.8",
         "laravel/sanctum": "^3.0",
         "laravel/tinker": "^2.7",
+        "orchestra/parser": "^7.0",
         "spatie/laravel-permission": "^6.3",
         "sqits/laravel-userstamps": "^0.0.10"
     },

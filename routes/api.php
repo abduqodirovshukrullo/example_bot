@@ -15,4 +15,4 @@ use Illuminate\Support\Facades\Route;
 */
 Route::prefix('dashboard')->name('dashboard.')->group(__DIR__.'/dashboard/index.php');
 Route::prefix('sign-in')->name('sign-in.')->group(__DIR__.'/auth/index.php');
-Route::prefix('weather')->name('weather.')->group(__DIR__.'/weather/index.php');
+Route::prefix('currencies')->name('currencies.')->group(__DIR__.'/currencies/index.php');
