@@ -11,19 +11,42 @@ class CurrencyService
 {
     public $currency;
     public $client;
+    public $currrencies;
+
     function __construct(){
         $this->client = new CbrClient();
     }
     public function getCurrencies($payload){
-        $currencies = Currency::query()->get();
+        $currencies = Currency::query()->paginate(15);
         return $currencies;
     }
 
     public function loadCurrency(){
         $data = $this->client->getCurrencies();
-        $currencyDataArray = new CurrencyXmlParser($data->body());
-        return $currencyDataArray->toArray();
+        if($data->successful()){
+            $this->currrencies = new CurrencyXmlParser($data->body());
+            return $this->currrencies->toArray();
+        }
+        return false;
+        
     }   
+
+    public function saveCurrencies(){
+        if(!empty($this->currrencies->toArray())&&$data=$this->currrencies->toArray()){
+            foreach($data['Valute'] as $item){
+                $model = Currency::updateOrCreate([
+                   'cbr_id'=>$item['@attributes']['ID'] ],[
+                   'name'=>$item['Name'],
+                   'nominal'=>$item['Nominal'],
+                   'value'=>$item['Value'],
+                   'rate'=>$item['VunitRate'],
+                ]);
+            }
+
+            return true;
+        }
+        return false;
+    }
 
 }
 

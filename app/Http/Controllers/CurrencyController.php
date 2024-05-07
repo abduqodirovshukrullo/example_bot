@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Domain\Currency\Entities\Currency;
 use App\Domain\Weather\Services\AccuWeatherService;
-use App\Domain\Weather\Services\CurrencyService;
+use App\Domain\Currency\Services\CurrencyService;
+use App\Http\Resources\Currency\CurrencyCollection;
+use App\Http\Resources\Currency\CurrencyResource;
 use Illuminate\Http\Request;
 
 class CurrencyController extends Controller
@@ -18,25 +20,12 @@ class CurrencyController extends Controller
 
 
 
-    public function inedx(Request $request){
+    public function index(Request $request){
         $response = $this->currencyService->getCurrencies($request);
-
-        return $this->apiResponse(
-            [
-                'success' => true,
-                'result' => $response->json(),
-                'message'=>'Success'
-            ], 200
-        );
+        return $this->respondWithResourceCollection(new CurrencyCollection($response));
     }
 
     public function show(Currency $currency){
-        return $this->apiResponse(
-            [
-                'success' => true,
-                'result' => $currency,
-                'message'=>'Success'
-            ], 200
-        );
+        return $this->respondWithResource(new CurrencyResource($currency));
     }
 }

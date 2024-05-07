@@ -36,10 +36,14 @@ class CurrencyCommand extends Command
        
 
         $response = $service->loadCurrency();
-        dd($response);
-        $this->info("Weather: {$response->body()}!");
+       
+        if($service->saveCurrencies()){
+            $this->info('Currencies loaded successfully!');
+            return Command::SUCCESS;
+        }
+        return Command::FAILURE;
       
-        return Command::SUCCESS;
+       
     }
 
     

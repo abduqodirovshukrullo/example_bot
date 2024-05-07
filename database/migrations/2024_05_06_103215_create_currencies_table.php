@@ -16,9 +16,10 @@ return new class extends Migration
         Schema::create('currencies', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->double('nominal');
-            $table->double('value');
-            $table->double('rate');
+            $table->string('cbr_id');
+            $table->string('nominal');
+            $table->string('value');
+            $table->string('rate');
             $table->timestamps();
         });
     }

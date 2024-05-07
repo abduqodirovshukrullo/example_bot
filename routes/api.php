@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CurrencyController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -15,4 +16,5 @@ use Illuminate\Support\Facades\Route;
 */
 Route::prefix('dashboard')->name('dashboard.')->group(__DIR__.'/dashboard/index.php');
 Route::prefix('sign-in')->name('sign-in.')->group(__DIR__.'/auth/index.php');
-Route::prefix('currencies')->name('currencies.')->group(__DIR__.'/currencies/index.php');
+Route::get('currencies/',[CurrencyController::class,'index'])->name('index');
+Route::get('currency/{currency}',[CurrencyController::class,'show'])->name('show')->middleware('auth:api');

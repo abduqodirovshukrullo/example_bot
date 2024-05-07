@@ -2,11 +2,15 @@
 
 namespace App\Domain\Currency\Entities;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
+use App\Models\Base;
 
-class Currency extends Model
+class Currency extends Base
 {
-    use HasFactory;
-
+    protected $fillable = [
+        'name',
+        'nominal',
+        'value',
+        'rate',
+        'cbr_id'
+    ];
 }
